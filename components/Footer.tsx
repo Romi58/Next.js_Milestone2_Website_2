@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react'
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
 
 const currentYear = new Date().getFullYear()
 
@@ -64,9 +64,9 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <p className="text-gray-400 text-sm text-center mb-4">Trusted by industry leaders:</p>
           <div className="flex flex-wrap justify-center items-center gap-6">
-            <Image src="/placeholder.svg" alt="Client Logo 1" width={100} height={40} className="h-8 w-auto object-contain" />
-            <Image src="/placeholder.svg" alt="Client Logo 2" width={100} height={40} className="h-8 w-auto object-contain" />
-            <Image src="/placeholder.svg" alt="Client Logo 3" width={100} height={40} className="h-8 w-auto object-contain" />
+            <Image src="https://media.istockphoto.com/id/2157394121/photo/portrait-of-confident-businesswoman-standing-in-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=eK6hSqdHlfABi60Ipge_SkS1NsHGNf8Lnm0WSrZFGgA=" alt="Client Logo 1" width={100} height={40} className="h-8 w-auto object-contain" />
+            <Image src="https://media.istockphoto.com/id/1419539600/photo/business-presentation-and-man-on-a-laptop-in-a-corporate-conference-or-office-collaboration.webp?a=1&b=1&s=612x612&w=0&k=20&c=ZYbTZ0tdL9A7HsGOrkxaZ94v6EdNESNMJmF931BE8kg=" alt="Client Logo 2" width={100} height={40} className="h-8 w-auto object-contain" />
+            <Image src="https://media.istockphoto.com/id/1783743772/photo/female-speaker-giving-a-presentation-during-business-seminar-at-convention-center.webp?a=1&b=1&s=612x612&w=0&k=20&c=FjhrzpJnI2FXNc3yHDyK0c-adWFauZlTUfQYFolTWgs=" alt="Client Logo 3" width={100} height={40} className="h-8 w-auto object-contain" />
           </div>
         </div>
       </div>
@@ -77,7 +77,12 @@ const Footer = () => {
   )
 }
 
-const FooterLink = ({ href, children }) => (
+interface FooterLinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
   <li>
     <Link href={href} className="text-gray-400 hover:text-white transition-colors">
       {children}
@@ -85,7 +90,12 @@ const FooterLink = ({ href, children }) => (
   </li>
 )
 
-const SocialIcon = ({ href, icon }) => (
+interface SocialIconProps {
+  href: string;
+  icon: React.ReactNode;
+}
+
+const SocialIcon: React.FC<SocialIconProps> = ({ href, icon }) => (
   <a
     href={href}
     target="_blank"

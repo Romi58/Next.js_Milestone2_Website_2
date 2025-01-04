@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
-// import { motion } from 'framer-motion'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,7 +44,13 @@ const Header = () => {
   )
 }
 
-const NavLink = ({ href, children, mobile = false }) => (
+interface NavLinkProps {
+  href: string;
+  children: React.ReactNode;
+  mobile?: boolean;
+}
+
+const NavLink: React.FC<NavLinkProps> = ({ href, children, mobile = false }) => (
   <Link href={href} className={`text-gray-600 hover:text-primary transition-colors duration-200 ${mobile ? 'block py-2' : ''}`}>
     {children}
   </Link>
