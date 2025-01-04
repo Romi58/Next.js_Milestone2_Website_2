@@ -3,12 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      'media.licdn.com',     // Existing domain
-      'images.inc.com',      // Existing domain
-      'example.com',         // Existing domain
-      'cdn.example.net',     // Existing domain
-      'images.prismic.io',   // Added earlier
-      'plus.unsplash.com',   // New domain for Unsplash
+      'media.licdn.com',     
+      'images.inc.com',    
+      'example.com',         
+      'cdn.example.net',     
+      'images.prismic.io',   
+      'plus.unsplash.com',   
+      'media.istockphoto.com',
     ],
   },
 };
